@@ -32,7 +32,7 @@ wandb_config = {
     'batch_size': 2,
     'learning_rate': 3e-4,  # best learning rate for Adam, hands down
     'num_epochs': args.num_epochs,
-    'loss_term_factors': {'generic': 1., 'continuity': 1.}
+    'loss_term_factors': {'generic': 1.}
 }
 
 

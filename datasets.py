@@ -32,7 +32,7 @@ class InMemoryLumenDataset(torch_geometric.data.InMemoryDataset):
     def process(self):
         data_list = []
 
-        for path in tqdm.tqdm(self.raw_paths, desc="Reading", leave=False):
+        for path in tqdm.tqdm(self.raw_paths, desc="Reading data", leave=False):
             data = self.read_hdf5_data(path)
             data_list.append(data)
 
@@ -40,7 +40,7 @@ class InMemoryLumenDataset(torch_geometric.data.InMemoryDataset):
             data_list = [data for data in data_list if self.pre_filter(data)]
 
         if self.pre_transform is not None:
-            data_list = [self.pre_transform(data) for data in tqdm.tqdm(data_list, desc="Transforming", leave=False)]
+            data_list = [self.pre_transform(data) for data in tqdm.tqdm(data_list, desc="Transforming data", leave=False)]
 
         # Save to disk
         data, slices = self.collate(data_list)
@@ -96,7 +96,7 @@ class LumenDataset(torch_geometric.data.Dataset):
         return
 
     def process(self):
-        for idx, path in enumerate(tqdm.tqdm(self.raw_paths, desc="Reading & transforming", leave=False)):
+        for idx, path in enumerate(tqdm.tqdm(self.raw_paths, desc="Reading & transforming data", leave=False)):
             data = self.read_hdf5_data(path)
 
             if self.pre_filter is not None and not self.pre_filter(data):

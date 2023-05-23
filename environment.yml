@@ -23,6 +23,7 @@ dependencies:
   - wheel=0.38.4=py311h06a4308_0
   - xz=5.4.2=h5eee18b_0
   - zlib=1.2.13=h5eee18b_0
+  - pip
   - pip:
     - certifi==2023.5.7
     - charset-normalizer==3.1.0
@@ -74,10 +75,10 @@ dependencies:
     - torch-geometric==2.3.1
     - torch-scatter==2.1.1+pt20cu117
     - torch-sparse==0.6.17+pt20cu117
+    - -f https://data.pyg.org/whl/torch-2.0.0+cu117.html
     - tqdm==4.65.0
     - triton==2.0.0
     - typing-extensions==4.5.0
     - urllib3==2.0.2
     - vtk==9.2.6
     - wcwidth==0.2.6
-prefix: /home/julian/anaconda3/envs/segnn-hemo
