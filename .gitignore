@@ -1,0 +1,7 @@
+# Python
+__pycache__/
+
+# Datasets, neural-network weights, visuals
+*.hdf5
+*.pt
+*.vtu
