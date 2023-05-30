@@ -219,7 +219,7 @@ def assessment_loop(config):
     accuracy_analysis = {'velocity': AccuracyAnalysis()}
     vtu_writer = VTUWriter()
 
-    if isinstance(config['neural_network'], PointNet):
+    if not isinstance(config['neural_network'], SEGNN):
         config['neural_network'].eval()  # training-mode "BatchNorm" equals "instance norm" (batch size one)
 
     with torch.no_grad():

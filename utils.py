@@ -60,7 +60,7 @@ class VTUWriter():
 
     @staticmethod
     def parse_point_data(data):
-        return {key: value for key, value in data if value.size(0) == data.pos.size(0) and key != 'pos' and value.dim() <= 2}
+        return {key: value for key, value in data if value.size(0) == data.num_nodes and key != 'pos' and value.dim() <= 2}
 
     @staticmethod
     def parse_point_indices(data):
@@ -69,7 +69,7 @@ class VTUWriter():
         for key, value in data:
             if "_index" in key and key != 'edge_index':
 
-                point_mask = np.zeros(data.pos.size(0), dtype='f4')  # integer data types mess with VTK
+                point_mask = np.zeros(data.num_nodes, dtype='f4')  # integer data types mess with VTK
                 point_mask[value] = 1.
 
                 point_mask_dict[key.replace("_index", "")] = point_mask
@@ -86,7 +86,7 @@ class VTUWriter():
                 for key, value in data:
                     if value.size(0) == index.size(0) and key != index_key:
 
-                        dummy_volume_allocation = np.zeros((data.pos.size(0), *value.shape[1:]))
+                        dummy_volume_allocation = np.zeros((data.num_nodes, *value.shape[1:]))
                         dummy_volume_allocation[index] = value
 
                         dummy_volume_data_dict[key] = dummy_volume_allocation
