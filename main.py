@@ -192,7 +192,10 @@ def optimisation_loop(config):
 
             del batch, prediction
 
-        ddp_rank_zero(torch.save, config['neural_network'].state_dict(), "neural_network_weights.pt")
+        if isinstance(config['neural_network'], DistributedDataParallel):
+            ddp_rank_zero(torch.save, config['neural_network'].module.state_dict(), "neural_network_weights.pt")
+        else:
+            ddp_rank_zero(torch.save, config['neural_network'].state_dict(), "neural_network_weights.pt")
 
         # Learning task
         # config['neural_network'].eval()  # training-mode "BatchNorm" approximates "instance norm"
