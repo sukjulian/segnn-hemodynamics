@@ -8,14 +8,12 @@ from torch_scatter import scatter
 
 
 def main():
-    # sampling_ratios = (0.2, 0.25, 0.25, 0.25, 0.25)  # PointNet++
-    sampling_ratios = (0.04, 0.1)  # SEGNN
 
-    model_name = "segnn"
+    # model_name, sampling_ratios = "pointnet++", (0.2, 0.25, 0.25, 0.25, 0.25)
+    model_name, sampling_ratios = "segnn", (0.04, 0.1)
 
     print(compute_kernel_radii_statistics("lumen-dataset/raw/lumen_tiny.hdf5", sampling_ratios, model_name, average_num_neighbours=13))
-
-    print("In our experiments, the mean radii worked well for PointNet++ and the 92-percentile radii for SEGNN.")
+    print("In our experiments, the 92-percentile radii worked well.")
 
 
 def compute_kernel_radii_statistics(path_to_hdf5, sampling_ratios, model_name, average_num_neighbours):
@@ -44,7 +42,7 @@ def compute_kernel_radii_statistics(path_to_hdf5, sampling_ratios, model_name, a
                 target_idcs, source_idcs = knn(pos_coarse, pos_coarse, k=average_num_neighbours)
                 pos = pos_coarse
 
-            edge_lengths = torch.norm(pos[target_idcs] - pos_coarse[source_idcs], dim=-1)
+            edge_lengths = torch.norm(pos_coarse[target_idcs] - pos[source_idcs], dim=-1)
             scatter_index = torch.tensor(i).expand(edge_lengths.numel())
 
             edge_lengths_dict[cummulative_sampling_ratio]['edge_lengths'].append(edge_lengths)
