@@ -1,7 +1,7 @@
 # SEGNN for hemodynamics
 ![cover](img/cover.png)
 
-This repository contains the code for the paper [SE(3) symmetry lets graph neural networks learn arterial velocity estimation from small datasets](https://arxiv.org/abs/2302.08780) (FIMH 2023).
+This repository contains the code for the paper "SE(3) symmetry lets graph neural networks learn arterial velocity estimation from small datasets" [[arXiv]](https://arxiv.org/abs/2302.08780) [[Springer]](https://link.springer.com/chapter/10.1007/978-3-031-35302-4_46) (FIMH 2023).
 
 ## Getting started
 Set up the Conda environment (CUDA 11.7) by running
