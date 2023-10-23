@@ -42,11 +42,14 @@ If you have questions, feel free to open an [issue](https://github.com/sukjulian
 ## Credits
 If you found this repository useful, please consider citing our paper:
 ```
-@article{Suk2023SE3SL,
-  title = {{SE(3)} symmetry lets graph neural networks learn arterial velocity estimation from small datasets},
-  author = {Julian Suk and Christoph Brune and Jelmer M. Wolterink},
-  journal = {ArXiv},
-  year = {2023},
-  volume = {abs/2302.08780}
+@inproceedings{Suk2023SE3Symmetry,
+  author = "Suk, Julian and Brune, Christoph and Wolterink, Jelmer M.",
+  title = "{SE(3)} Symmetry Lets Graph Neural Networks Learn Arterial Velocity Estimation from Small Datasets",
+  booktitle = "Functional Imaging and Modeling of the Heart",
+  year = "2023",
+  publisher = "Springer Nature Switzerland",
+  address = "Cham",
+  pages = "445--454",
+  isbn = "978-3-031-35302-4"
 }
 ```
