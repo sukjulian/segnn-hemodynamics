@@ -9,7 +9,7 @@ Set up the Conda environment (CUDA 11.7) by running
 conda env create -f environment.yml -n segnn-hemo
 conda activate segnn-hemo
 ```
-and download (a tiny subset of) our dataset from [here](https://drive.google.com/file/d/10p_O9R0op7zLwo1w6qGv8FjK3S-EXBNn/view?usp=sharing) and pre-trained SEGNN weights from [here](https://drive.google.com/file/d/1VY1lkK-SsXmv9w4TuNFewxtK5YAFgSdk/view?usp=share_link). Place `lumen_tiny.hdf5` into the directory `./lumen-dataset/raw/` and leave `neural_network_weights.pt` at `./`. If everything is set up correctly, after running
+and download (a tiny subset of) our dataset from [here](https://surfdrive.surf.nl/files/index.php/s/jS078iW3HIwTlLz) and pre-trained SEGNN weights from [here](https://drive.google.com/file/d/1VY1lkK-SsXmv9w4TuNFewxtK5YAFgSdk/view?usp=share_link). Place `lumen_tiny.hdf5` into the directory `./lumen-dataset/raw/` and leave `neural_network_weights.pt` at `./`. If everything is set up correctly, after running
 ```
 python main.py --num_epochs 0
 ```
