@@ -23,9 +23,9 @@ database.hdf5
 │   ├── velocity           # N x 3
 │   ├── pos_tets           # N x 3
 │   ├── tets               # M x 4
-│   ├── inlet_idcs         # indexing pos_tets (values in [0, N])
-│   ├── lumen_wall_idcs    # indexing pos_tets (values in [0, N])
-│   └── outlets_idcs       # indexing pos_tets (values in [0, N])
+│   ├── inlet_idcs         # indexing pos_tets (values in [0, N))
+│   ├── lumen_wall_idcs    # indexing pos_tets (values in [0, N))
+│   └── outlets_idcs       # indexing pos_tets (values in [0, N))
 │
 ├── ...
 │
