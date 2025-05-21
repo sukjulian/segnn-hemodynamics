@@ -1,3 +1,5 @@
+_If you like this work, also check out our latest iteration [LaB-GATr](https://github.com/sukjulian/lab-gatr) which can be used for the same applications and more!_
+
 # SEGNN for hemodynamics
 ![cover](img/cover.png)
 
