@@ -42,16 +42,18 @@ database.hdf5
 If you have questions, feel free to open an [issue](https://github.com/sukjulian/segnn-hemodynamics/issues) or [contact me](mailto:j.m.suk@utwente.nl). Depending on the size of your meshes, parallelised training across multiple GPUs might be neccessary. Distributed parallel training is available via the option `--num_gpus`. If you are not sure how to set the radii in `PoolingClusterSampling` you can try using `scripts/estimate_neighbourhoods_radii.py`.
 
 ## Credits
-If you found this repository useful, please consider citing our paper:
+If you found this repository useful, consider citing our paper:
 ```
-@inproceedings{Suk2023SE3Symmetry,
-  author = "Suk, Julian and Brune, Christoph and Wolterink, Jelmer M.",
-  title = "{SE(3)} Symmetry Lets Graph Neural Networks Learn Arterial Velocity Estimation from Small Datasets",
-  booktitle = "Functional Imaging and Modeling of the Heart",
-  year = "2023",
-  publisher = "Springer Nature Switzerland",
-  address = "Cham",
-  pages = "445--454",
-  isbn = "978-3-031-35302-4"
+@inproceedings{SE3Symmetry,
+author="Suk, Julian
+and Brune, Christoph
+and Wolterink, Jelmer M.",
+title="{SE(3)} Symmetry Lets Graph Neural Networks Learn Arterial Velocity Estimation from Small Datasets",
+booktitle="Functional Imaging and Modeling of the Heart",
+year="2023",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="445--454",
+isbn="978-3-031-35302-4"
 }
 ```
